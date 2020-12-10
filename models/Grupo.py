@@ -6,3 +6,6 @@ from odoo import models
 
 class Grupo(models.Model):
     _name = 'libros.grupo'
+    
+    
+    

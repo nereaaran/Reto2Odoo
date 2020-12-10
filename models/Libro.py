@@ -6,4 +6,5 @@ from odoo import models
 
 class Libro(models.Model):
     _name = 'libros.libro'
+    
     idLibro = field.Integer(string="")

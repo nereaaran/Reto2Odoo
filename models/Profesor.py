@@ -6,3 +6,5 @@ from odoo import models
 
 class Profesor(models.Model):
     _name = 'libros.profesor'
+    
+    

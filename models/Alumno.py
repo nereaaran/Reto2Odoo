@@ -5,4 +5,5 @@
 from odoo import models
 
 class Alumno(models.Model):
-    _name = 'libros.alumno'
+    _name = 'libros.alumno' 
+    

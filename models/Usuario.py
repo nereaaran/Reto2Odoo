@@ -6,3 +6,6 @@ from odoo import models
 
 class Usuario(models.Model):
     _name = 'libros.usuario'
+    
+    
+    
