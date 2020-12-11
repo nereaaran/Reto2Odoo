@@ -5,5 +5,8 @@
 from odoo import models
 
 class Alumno(models.Model):
-    _name = 'libros.alumno' 
+    _name = 'libros.alumno'
+    _inherit='libros.usuario'
     
+    dni=fields.String(String="DNI")
+    lastAccess=fields.Date(String="Last access", default=fields.Date.today)
