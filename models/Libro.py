@@ -7,4 +7,12 @@ from odoo import models
 class Libro(models.Model):
     _name = 'libros.libro'
     
-    idLibro = field.Integer(string="")
+    idLibro = fields.Integer(string = "Id Libro", required = True) ###########
+    titulo = fields.String(string = "Titulo", required = True)
+    autor = fields.String(string = "Autor", required = True)
+    editorial = fields.String(string = "Editorial", required = True)
+    isbn = fields.Integer(string = "ISBN", required = True)
+    genero = fields.String(string = "Genero literario", required = True)
+    
+    
+    
