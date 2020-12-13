@@ -6,22 +6,27 @@ from odoo import models
 
 class Usuario(models.Model):
     _name = 'libros.usuario'
-    _inherit='res.users'
+    _inherit = 'res.users'
     
-    idUsuario
-    login=fields.String(String="Login", required=True)
-    email=fields.String(String="Email", required=True)
-    fullname=fields.String(String="Full Name", required=True)
-    class Status(Enum):
-        ENABLED
-        DISABLED
-    class Privilege(Enum):
-        USER
-        ADMIN
-    password=fields.String(String="Password", required=True)
-    lastAccess=fields.Date(String="Last access", default=fields.Date.today, required=True)
-    lastPasswordChange=fields.Date(String="Last password change", default=fields.Date.today, required=True)
-    class TipoUsuario(Enum):
-        BIBLIOTECARIO
-        PROFESOR
-        ALUMNO
+    login = fields.String(String="Login", required=True)
+    email = fields.String(String="Email", required=True)
+    fullname = fields.String(String="Nombre completo", required=True)
+    status = fields.Selection(
+                              selection=[('1', 'ENABLED'),
+                              ('2', 'DISABLED')], 
+                              string="Estado del usuario", 
+                              required=True)
+    privilege = fields.Selection(
+                                 selection=[('1', 'USER'),
+                                 ('2', 'ADMIN')], 
+                                 string="Privilegio del usuario", 
+                                 required=True)
+    password = fields.String(String="Contraseña", required=True)
+    lastAccess = fields.DateTime(String="Último acceso", default=fields.DateTime.now, required=True)
+    lastPasswordChange = fields.DateTime(String="Último cambio de contraseña", default=fields.DateTime.now, required=True)
+    tipoUsuario = fields.Selection(
+                                   selection=[('1', 'BIBLIOTECARIO'),
+                                   ('2', 'PROFESOR')
+                                   ('3', 'ALUMNO')], 
+                                   string="Tipo de usuario", 
+                                   required=True)

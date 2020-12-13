@@ -6,4 +6,6 @@ from odoo import models
 
 class Bibliotecario(models.Model):
     _name = 'libros.bibliotecario'
-    _inherit='libros.usuario'
+    _inherit = 'libros.usuario'
+    
+    libro_id = fields.One2Many('libros.libro', 'usuario_id', String="Libro")
