@@ -5,6 +5,11 @@
 from odoo import models
 
 class Profesor(models.Model):
-    _name = 'libros.profesor'
+    _name = 'res.user'
+    _inherit = 'res.user'
     
+    telefono = fields.Integer('libros.profesor', String="Telefono")
     
+    #Relacion 1:N con grupo
+    grupos_ids = fields.One2many('libros.grupo', 'res.user', String ="Grupo")
+
