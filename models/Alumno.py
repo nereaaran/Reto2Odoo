@@ -5,7 +5,6 @@
 from odoo import models
 
 class Alumno(models.Model):
-    _name = 'libros.alumno'
     _inherit = 'libros.usuario'
     
     dni = fields.String(String="DNI")
