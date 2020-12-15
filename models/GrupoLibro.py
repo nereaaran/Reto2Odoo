@@ -9,7 +9,7 @@ class GrupoLibro(models.Model):
     _name = 'libros.grupo_libro'
     
     fecha_inicio = fields.Data(default=fields.Date.today, string="Fecha inicio")
-    fecha_fin = feilds.Data(String="Fecha fin")
+    fecha_fin = feilds.Data(string="Fecha fin")
     
     #Relacion 1:N con grupo
     grupo_id = fields.Many2one('libros.grupo', 'grupoLibro_id', ondelete='cascade', string="IdGrupo")

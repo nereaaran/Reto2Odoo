@@ -18,5 +18,5 @@ class Grupo(models.Model):
     grupo_libro_id = fields.One2many('libros.grupo_libro', 'grupo_id', 
                                 string = "id_grupoLibro")
     #Relacion M:N con alumno
-    alumno_id = fields.Many2many('res.user', String="Alumno") 
+    alumno_id = fields.Many2many('res.user', string="Alumno") 
     
