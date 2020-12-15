@@ -11,5 +11,5 @@ class Profesor(models.Model):
     telefono = fields.Integer('libros.profesor', String="Telefono")
     
     #Relacion 1:N con grupo
-    grupos_ids = fields.One2many('libros.grupo', 'res.user', String ="Grupo")
+    grupo_id = fields.One2many('libros.grupo', 'profesor_id', String ="Grupo")
 

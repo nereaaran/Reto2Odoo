@@ -12,6 +12,8 @@ class Grupo(models.Model):
     numAlumno = fields.Integer(String="Numero de Alumnos")
     
     #Relacion N:1 con profesor
-    profesores_ids = fields.Many2one('res.user', 'grupo_ids', ondelete='set null', String = "Profesor")
+    profeso_id = fields.Many2one('res.user', ondelete='cascade',
+                                String = "Profesor", requered=True)
     #Relacion N:1 con GrupoLibro
-    grupolibro = fields.One2many('libros.grupo_libro', 'grupos', ondete='cascade')
+    grupoLibro_id = fields.One2many('libros.grupo_libro', 'grupo_id', 
+                                String = "id_grupoLibro")

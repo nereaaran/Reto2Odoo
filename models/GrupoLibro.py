@@ -12,8 +12,9 @@ class GrupoLibro(models.Model):
     fechaFin = feilds.Data(String="Fecha fin")
     
     #Relacion 1:N con grupo
-    grupos = fields.Many2one('libros.grupo', 'grupolibro', ondelete='cascade', String="GrupoId")
+    grupo_id = fields.Many2one('libros.grupo', 'grupoLibro_id', ondelete='cascade', String="IdGrupo")
     #Relacion 1:N con libro
-    libros = fields.Many2one('libros.libro', 'nombreRelacion', ondelte='cascade', String="LibroId")
-    
+    libro_id = fields.Many2one('libros.libro', 'grupo_id', ondelte='cascade', String="Libro")
+    #Relacion M:N con alumno
+    alumno_id = fields.Many2many('res.user', String="Alumno") 
     
