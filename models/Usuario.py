@@ -8,9 +8,9 @@ class Usuario(models.Model):
     _name = 'libros.usuario'
     _inherit = 'res.users'
     
-    login = fields.String(String="Login", required=True)
-    email = fields.String(String="Email", required=True)
-    fullname = fields.String(String="Nombre completo", required=True)
+    login = fields.String(string="Login", required=True)
+    email = fields.String(string="Email", required=True)
+    fullname = fields.String(string="Nombre completo", required=True)
     status = fields.Selection(
                               selection=[('1', 'ENABLED'),
                               ('2', 'DISABLED')], 
@@ -21,9 +21,9 @@ class Usuario(models.Model):
                                  ('2', 'ADMIN')], 
                                  string="Privilegio del usuario", 
                                  required=True)
-    password = fields.String(String="Contraseña", required=True)
-    lastAccess = fields.DateTime(String="Último acceso", default=fields.DateTime.now, required=True)
-    lastPasswordChange = fields.DateTime(String="Último cambio de contraseña", default=fields.DateTime.now, required=True)
+    password = fields.String(string="Contraseña", required=True)
+    lastAccess = fields.DateTime(string="Último acceso", default=fields.DateTime.now, required=True)
+    lastPasswordChange = fields.DateTime(string="Último cambio de contraseña", default=fields.DateTime.now, required=True)
     tipoUsuario = fields.Selection(
                                    selection=[('1', 'BIBLIOTECARIO'),
                                    ('2', 'PROFESOR')
