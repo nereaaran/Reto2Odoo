@@ -8,12 +8,15 @@ class Grupo(models.Model):
     _name = 'libros.grupo'
     
     descripcion = fields.Text()
-    nombre = fields.Char(String="Nombre", required=True)
-    numAlumno = fields.Integer(String="Numero de Alumnos")
+    nombre = fields.Char(string="Nombre", required=True)
+    num_alumno = fields.Integer( string="Numero de Alumnos")
     
     #Relacion N:1 con profesor
-    profeso_id = fields.Many2one('res.user', ondelete='cascade',
-                                String = "Profesor", requered=True)
+    profesor_id = fields.Many2one('res.user', ondelete='cascade',
+                                string = "Profesor", required=True)
     #Relacion N:1 con GrupoLibro
-    grupoLibro_id = fields.One2many('libros.grupo_libro', 'grupo_id', 
-                                String = "id_grupoLibro")
+    grupo_libro_id = fields.One2many('libros.grupo_libro', 'grupo_id', 
+                                string = "id_grupoLibro")
+    #Relacion M:N con alumno
+    alumno_id = fields.Many2many('res.user', String="Alumno") 
+    

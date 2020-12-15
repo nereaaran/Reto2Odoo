@@ -8,13 +8,11 @@ from odoo import models, fields
 class GrupoLibro(models.Model):
     _name = 'libros.grupo_libro'
     
-    fechaInicio = fields.Data(default=fields.Date.today, String="Fecha inicio")
-    fechaFin = feilds.Data(String="Fecha fin")
+    fecha_inicio = fields.Data(default=fields.Date.today, string="Fecha inicio")
+    fecha_fin = feilds.Data(String="Fecha fin")
     
     #Relacion 1:N con grupo
-    grupo_id = fields.Many2one('libros.grupo', 'grupoLibro_id', ondelete='cascade', String="IdGrupo")
+    grupo_id = fields.Many2one('libros.grupo', 'grupoLibro_id', ondelete='cascade', string="IdGrupo")
     #Relacion 1:N con libro
-    libro_id = fields.Many2one('libros.libro', 'grupo_id', ondelte='cascade', String="Libro")
-    #Relacion M:N con alumno
-    alumno_id = fields.Many2many('res.user', String="Alumno") 
-    
+    libro_id = fields.Many2one('libros.libro', 'grupo_id', ondelte='cascade', string="Libro")
+   
