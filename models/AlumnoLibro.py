@@ -14,8 +14,8 @@ class AlimnoLibro(models.Model):
     fecha_limite = fields.Date.today(string="Fecha Limite")
 
     # Variable relacionada con la tabla alumno.
-    alumno_id = fields.Many2One('libros.alumno', required = True)
+    alumno_id = fields.Many2one('libros.alumno', required = True, ondelete='cascade')
     # Variable relacionada con la tabla libro.
-    libro_id = fields.Many2One('libros.libro', required = True)
+    libro_id = fields.Many2one('libros.libro', required = True, ondelete='cascade')
     
     

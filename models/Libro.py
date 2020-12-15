@@ -28,9 +28,9 @@ class Libro(models.Model):
     linkDescarga = fields.String(string = "Link de descarga")
     
     # Referencia a la relacion 1:N con bibliotecario
-    bibliotecario_id = fields.Many2One('libros.bibliotecario', string = "Bibliotecario")
+    bibliotecario_id = fields.Many2one('libros.bibliotecario', string = "Bibliotecario", ondelete = 'cascade')
     # Referencia a la relacion 1:N con la tabla relacional alumno libro.
-    alumno_id = fields.One2Many('libros.alumno_libro', 'libro_id', string = "Alumno")
+    alumno_id = fields.One2many('libros.alumno_libro', 'libro_id', string = "Alumno")
     # Referencia a la relacion 1:N con la tabla relacional grupo libro.
-    grupo_id = fields.One2Many('libros.grupo_libro', 'libro_id', string = "Grupo")
+    grupo_id = fields.One2many('libros.grupo_libro', 'libro_id', string = "Grupo")
     
