@@ -3,13 +3,15 @@
 # and open the template in the editor.
 
 
-from odoo import models, fields
+from odoo import api
+from odoo import fields
+from odoo import models
 
-class GrupoLibro(models.Model):
+class Grupolibro(models.Model):
     _name = 'libros.grupo_libro'
     
-    fecha_inicio = fields.Data(default=fields.Date.today, string="Fecha inicio")
-    fecha_fin = feilds.Data(string="Fecha fin")
+    fecha_inicio = fields.Date(default=fields.Date.today)
+    fecha_fin = fields.Date(string="Fecha fin")
     
     #Relacion 1:N con grupo
     grupo_id = fields.Many2one('libros.grupo', 'grupoLibro_id', ondelete='cascade', string="IdGrupo")

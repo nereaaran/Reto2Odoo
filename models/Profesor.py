@@ -2,14 +2,14 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
+from odoo import api
+from odoo import fields
 from odoo import models
 
 class Profesor(models.Model):
-    _name = 'res.user'
     _inherit = 'res.user'
     
-    telefono = fields.Integer('libros.profesor', String="Telefono")
+    telefono = fields.Integer('libros.profesor', string="Telefono")
     
     #Relacion 1:N con grupo
-    grupo_id = fields.One2many('libros.grupo', 'profesor_id', String ="Grupo")
-
+    grupo_id = fields.One2many('libros.grupo', 'profesor_id', string ="Grupo")
