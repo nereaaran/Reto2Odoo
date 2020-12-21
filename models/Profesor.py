@@ -7,9 +7,9 @@ from odoo import fields
 from odoo import models
 
 class Profesor(models.Model):
-    _inherit = 'res.user'
+    _inherit = 'res.users'
     
-    telefono = fields.Integer('libros.profesor', string="Telefono")
+    telefono = fields.Integer(string="Telefono")
     
     #Relacion 1:N con grupo
     grupo_id = fields.One2many('libros.grupo', 'profesor_id', string ="Grupo")

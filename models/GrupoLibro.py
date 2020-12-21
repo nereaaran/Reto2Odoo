@@ -14,7 +14,7 @@ class Grupolibro(models.Model):
     fecha_fin = fields.Date(string="Fecha fin")
     
     #Relacion 1:N con grupo
-    grupo_id = fields.Many2one('libros.grupo', 'grupoLibro_id', ondelete='cascade', string="IdGrupo")
+    grupo_id = fields.Many2one('libros.grupo', ondelete='cascade', string="IdGrupo")
     #Relacion 1:N con libro
-    libro_id = fields.Many2one('libros.libro', 'grupo_id', ondelte='cascade', string="Libro")
+    libro_id = fields.Many2one('libros.libro', ondelte='cascade', string="IdLibro")
    

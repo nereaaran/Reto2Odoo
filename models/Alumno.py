@@ -7,7 +7,7 @@ from odoo import fields
 from odoo import models
 
 class Alumno(models.Model):
-    _inherit = 'libros.usuario'
+    _inherit = 'res.users'
     
     dni = fields.Char(string="DNI")
     fechaNacimiento = fields.Date(string="Fecha de nacimiento")
