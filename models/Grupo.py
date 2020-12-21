@@ -2,21 +2,23 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import models, fields
+from odoo import api
+from odoo import fields
+from odoo import models
 
 class Grupo(models.Model):
     _name = 'libros.grupo'
     
     descripcion = fields.Text()
     nombre = fields.Char(string="Nombre", required=True)
-    num_alumno = fields.Integer( string="Numero de Alumnos")
+    num_alumno = fields.Integer(string="Numero de Alumnos")
     
     #Relacion N:1 con profesor
     profesor_id = fields.Many2one('res.user', ondelete='cascade',
-                                string = "Profesor", required=True)
+                                  string="Profesor", required=True)
     #Relacion N:1 con GrupoLibro
     grupo_libro_id = fields.One2many('libros.grupo_libro', 'grupo_id', 
-                                string = "id_grupoLibro")
+                                     string="IdGrupo")
     #Relacion M:N con alumno
     alumno_id = fields.Many2many('res.user', string="Alumno") 
     
