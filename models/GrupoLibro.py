@@ -17,4 +17,3 @@ class Grupolibro(models.Model):
     grupo_id = fields.Many2one('libros.grupo', ondelete='cascade', string="IdGrupo")
     #Relacion 1:N con libro
     libro_id = fields.Many2one('libros.libro', ondelte='cascade', string="IdLibro")
-   

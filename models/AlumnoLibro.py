@@ -19,4 +19,3 @@ class Alimnolibro(models.Model):
     alumno_id = fields.Many2one('libros.alumno', required=True, ondelete='cascade')
     # Variable relacionada con la tabla libro.
     libro_id = fields.Many2one('libros.libro', required=True, ondelete='cascade')
-    

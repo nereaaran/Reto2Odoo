@@ -35,4 +35,3 @@ class Libro(models.Model):
     alumno_id = fields.One2many('libros.alumno_libro', 'libro_id', string="Alumno")
     # Referencia a la relacion 1:N con la tabla relacional grupo libro.
     grupo_id = fields.One2many('libros.grupo_libro', 'libro_id', string = "Grupo")
-    
