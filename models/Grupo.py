@@ -2,7 +2,8 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import api
+# author Jonathan Vinan
+
 from odoo import fields
 from odoo import models
 
