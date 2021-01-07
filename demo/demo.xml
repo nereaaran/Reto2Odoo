@@ -1,65 +1,30 @@
 <odoo>
     <data>
-        <record id="usuario_id" model="libros.usuario">
-            <field name="login">bibliotecario01</field>
-            <field name="email">bibliotecario01@tartanga.eus</field>
-            <field name="fullName">Juan Carlos</field>
-            <field name="status">ENABLED</field>
-            <field name="privilege">ADMIN</field>
-            <field name="tipoUsuario">BIBLIOTECARIO</field>
-            <field name="password">abcd*1234</field>
-            <field name="lastAccess"></field>
-            <field name="lastPasswordChange"></field>
-        </record>
-        <record id="usuario_id" model="libros.usuario">
-            <field name="login">caballeroBorjita</field>
-            <field name="email">bSaizB@tartanga.eus</field>
-            <field name="fullName">Borja Saiz</field>
-            <field name="status">ENABLED</field>
-            <field name="privilege">USER</field>
-            <field name="tipoUsuario">PROFESOR</field>
-            <field name="password">patata</field>
-            <field name="lastAccess"></field>
-            <field name="lastPasswordChange"></field>
-            <field name="telefono">666666666</field>
-        </record>
-        <record id="usuario_id" model="libros.usuario">
-            <field name="login">jorgeB</field>
-            <field name="email">jBarrido@tartanga.eus</field>
-            <field name="fullName">Jorge Barrido</field>
-            <field name="status">ENABLED</field>
-            <field name="privilege">USER</field>
-            <field name="tipoUsuario">PROFESOR</field>
-            <field name="password">JoRgE</field>
-            <field name="lastAccess"></field>
-            <field name="lastPasswordChange"></field>
-            <field name="telefono">666667667</field>
-        </record>
-        <record id="usuario_id" model="libros.usuario">
-            <field name="login">nereaaa</field>
-            <field name="email">naran@gmail.com</field>
-            <field name="fullName">Nerea Aranguren</field>
-            <field name="status">ENABLED</field>
-            <field name="privilege">USER</field>
-            <field name="tipoUsuario">ALUMNO</field>
-            <field name="password">nereaaa</field>
-            <field name="lastAccess"></field>
-            <field name="lastPasswordChange"></field>
-            <field name="dni">16092266V</field>
-            <field name="fechaNacimiento">1999/03/24</field>
-        </record>
-        <record id="usuario_id" model="libros.usuario">
-            <field name="login">knuspo</field>
-            <field name="email">cris@gmail.com</field>
-            <field name="fullName">Cristina Milea</field>
-            <field name="status">ENABLED</field>
-            <field name="privilege">USER</field>
-            <field name="tipoUsuario">ALUMNO</field>
-            <field name="password">1234</field>
-            <field name="lastAccess"></field>
-            <field name="lastPasswordChange"></field>
-            <field name="dni">X7006644Q</field>
-            <field name="fechaNacimiento">2000/09/05</field>
-        </record>
+        <!--  -->
+        <!--   <record id="object0" model="libros.libros"> -->
+        <!--     <field name="name">Object 0</field> -->
+        <!--     <field name="value">0</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object1" model="libros.libros"> -->
+        <!--     <field name="name">Object 1</field> -->
+        <!--     <field name="value">10</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object2" model="libros.libros"> -->
+        <!--     <field name="name">Object 2</field> -->
+        <!--     <field name="value">20</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object3" model="libros.libros"> -->
+        <!--     <field name="name">Object 3</field> -->
+        <!--     <field name="value">30</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object4" model="libros.libros"> -->
+        <!--     <field name="name">Object 4</field> -->
+        <!--     <field name="value">40</field> -->
+        <!--   </record> -->
+        <!--  -->
     </data>
 </odoo>

@@ -10,8 +10,12 @@
     <!--Menu de arriba-->
     <menuitem name="Libros" id="main_menu"/>
     
-    <!--Menu de la izquierda-->
+    <!--Menus de la izquierda-->
     <menuitem name="Libros" id="menu_libros" parent="main_menu"/>
-    <menuitem name="Libros2" id="menu_libros2" parent="menu_libros" action="libros.action_window"/>
+    <menuitem name="Gestionar libros" id="menu_gestionar_libros" parent="menu_libros" action="libros.action_window"/>
+    
+    <menuitem name="Grupos y alumnos" id="menu_grupos_y_alumnos" parent="main_menu"/>
+    <menuitem name="Gestionar grupos" id="menu_gestionar_grupos" parent="menu_grupos_y_alumnos" action="libros.action_window"/>
+    <menuitem name="Gestionar alumnos" id="menu_gestionar_alumnos" parent="menu_grupos_y_alumnos" action="libros.action_window"/>
   </data>
 </odoo>
