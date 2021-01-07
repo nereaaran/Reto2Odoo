@@ -1,12 +1,12 @@
-<!--author Cristina Milea-->
+<!--author Nerea Aranguren-->
 
 <odoo>
   <data>
     <!--Acciones-->
     <record model="ir.actions.act_window" id="libros.action_window">
-      <field name="name">Libros</field>
+      <field name="name">Buscar libros</field>
       <field name="res_model">libros.libro</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree, form</field>
     </record>
     
     <!--Menu de arriba-->
