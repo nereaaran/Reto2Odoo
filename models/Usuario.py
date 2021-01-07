@@ -2,16 +2,14 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import api
+# author Cristina Milea
+
 from odoo import fields
 from odoo import models
 
 class Usuario(models.Model):
     _inherit = 'res.users'
     
-    #login = fields.Char(string="Login", required=True)
-    #email = fields.Char(string="Email", required=True)
-    #fullname = fields.Char(string="Nombre completo", required=True)
     status = fields.Selection(
                               selection=[('enabled', 'ENABLED'),
                               ('disabled', 'DISABLED')], 
@@ -22,7 +20,6 @@ class Usuario(models.Model):
                                  ('2', 'ADMIN')], 
                                  string="Privilegio del usuario", 
                                  required=True)
-    #password = fields.Char(string="Contrasenia", required=True)
     lastAccess = fields.Datetime(string="Ultimo acceso", default=fields.Datetime.now, required=True)
     lastPasswordChange = fields.Datetime(string="Ultimo cambio del contrasenia", default=fields.Datetime.now, required=True)
     tipoUsuario = fields.Selection(
@@ -31,5 +28,3 @@ class Usuario(models.Model):
                                    ('3', 'ALUMNO')],
                                    string="Tipo de usuario", 
                                    required=True)
-
-

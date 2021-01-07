@@ -2,7 +2,8 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import api
+# author Nerea Aranguren
+
 from odoo import fields
 from odoo import models
 
@@ -35,4 +36,3 @@ class Libro(models.Model):
     alumno_id = fields.One2many('libros.alumno_libro', 'libro_id', string="Alumno")
     # Referencia a la relacion 1:N con la tabla relacional grupo libro.
     grupo_id = fields.One2many('libros.grupo_libro', 'libro_id', string = "Grupo")
-    

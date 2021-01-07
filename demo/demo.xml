@@ -1,20 +1,9 @@
 <odoo>
     <data>
-        <record id="usuario_id" model="libros.usuario">
-            <field name="login">bibliotecario01</field>
-            <field name="email">bibliotecario01@tartanga.eus</field>
-            <field name="fullName">Juan Carlos</field>
-            <field name="status"></field>
-            <field name="privilege"></field>
-            <field name="password"></field>
-            <field name="lastAccess"></field>
-            <field name="status"></field>
-            <field name="status"></field>
-        </record>
         <!--  -->
-        <!--   <record id="object1" model="libros.libros"> -->
-        <!--     <field name="name">Object 1</field> -->
-        <!--     <field name="value">10</field> -->
+        <!--   <record id="object0" model="libros.libros"> -->
+        <!--     <field name="name">Object 0</field> -->
+        <!--     <field name="value">0</field> -->
         <!--   </record> -->
         <!--  -->
         <!--   <record id="object1" model="libros.libros"> -->

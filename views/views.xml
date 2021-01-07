@@ -1,59 +1,23 @@
+<!--author Cristina Milea-->
+
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="libros.list">
-      <field name="name">libros list</field>
-      <field name="model">libros.libros</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
-    -->
-
-    <!-- actions opening views on models -->
-    <!--
+    <!--Acciones-->
     <record model="ir.actions.act_window" id="libros.action_window">
-      <field name="name">libros window</field>
-      <field name="res_model">libros.libros</field>
+      <field name="name">Libros</field>
+      <field name="res_model">libros.libro</field>
       <field name="view_mode">tree,form</field>
     </record>
-    -->
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="libros.action_server">
-      <field name="name">libros server</field>
-      <field name="model_id" ref="model_libros_libros"/>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
-
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="libros" id="libros.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="libros.menu_1" parent="libros.menu_root"/>
-    <menuitem name="Menu 2" id="libros.menu_2" parent="libros.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="libros.menu_1_list" parent="libros.menu_1"
-              action="libros.action_window"/>
-    <menuitem name="Server to list" id="libros" parent="libros.menu_2"
-              action="libros.action_server"/>
-    -->
+    
+    <!--Menu de arriba-->
+    <menuitem name="Libros" id="main_menu"/>
+    
+    <!--Menus de la izquierda-->
+    <menuitem name="Libros" id="menu_libros" parent="main_menu"/>
+    <menuitem name="Gestionar libros" id="menu_gestionar_libros" parent="menu_libros" action="libros.action_window"/>
+    
+    <menuitem name="Grupos y alumnos" id="menu_grupos_y_alumnos" parent="main_menu"/>
+    <menuitem name="Gestionar grupos" id="menu_gestionar_grupos" parent="menu_grupos_y_alumnos" action="libros.action_window"/>
+    <menuitem name="Gestionar alumnos" id="menu_gestionar_alumnos" parent="menu_grupos_y_alumnos" action="libros.action_window"/>
   </data>
 </odoo>

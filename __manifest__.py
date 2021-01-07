@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "libros",
+    'name': "Libros",
 
     'summary': """
         Modulo para la gestion de libros de una biblioteca""",
