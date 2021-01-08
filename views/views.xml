@@ -9,6 +9,12 @@
       <field name="view_mode">tree, form</field>
     </record>
     
+    <record model="ir.actions.act_window" id="libros.action_window">
+      <field name="name">Buscar alumnos</field>
+      <field name="res_model">res.users</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
     <!--Menu de arriba-->
     <menuitem name="Libros" id="main_menu"/>
     
