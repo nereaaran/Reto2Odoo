@@ -20,7 +20,6 @@ class Usuario(models.Model):
                                  ('2', 'ADMIN')], 
                                  string="Privilegio del usuario", 
                                  required=True)
-    lastAccess = fields.Datetime(string="Ultimo acceso", default=fields.Datetime.now, required=True)
     lastPasswordChange = fields.Datetime(string="Ultimo cambio del contrasenia", default=fields.Datetime.now, required=True)
     tipoUsuario = fields.Selection(
                                    selection=[('1','BIBLIOTECARIO'),
