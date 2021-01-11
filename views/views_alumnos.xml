@@ -9,9 +9,10 @@
             <field name="inherit_id" ref="base.view_users_tree"/>
             <field name="arch" type="xml">
                 <field name="login" position="after">
-                    <field name="dni" string="DNI"/>
-                    <field name="fechaNacimiento" string="Fecha de nacimiento"/>
+                    <field name="dni"/>
+                    <field name="fechaNacimiento"/>
                     <field name="active"/>
+                    <field name="tipoUsuario"/>
                 </field>
             </field>
         </record>
@@ -22,16 +23,16 @@
             <field name="model">res.users</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
-                <form string="Crear alumno">
+                <form>
                     <sheet>
                         <separator string="Datos personales" colspan="2"/>
                         <group>
-                            <field name="name"/>
+                            <field name="name" required="1"/>
                             <field name="dni"/>
                             <field name="fechaNacimiento"/>
                         </group>
-                        <group>
                         <separator string="Datos del usuario" colspan="2"/>
+                        <group>
                             <field name="login"/>
                             <field name="password"/>
                             <field name="active"/>
@@ -42,7 +43,7 @@
         </record>
         
         <!--Search-->
-        <record model="ir.ui.view" id="course_search_view">
+        <record model="ir.ui.view" id="alumnos_search_view">
             <field name="name">alumnos.search</field>
             <field name="model">res.users</field>
             <field name="arch" type="xml">
