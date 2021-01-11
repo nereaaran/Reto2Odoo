@@ -10,21 +10,17 @@ from odoo import models
 class Usuario(models.Model):
     _inherit = 'res.users'
     
-    status = fields.Selection(
-                              selection=[('enabled', 'ENABLED'),
-                              ('disabled', 'DISABLED')], 
-                              string="Estado del usuario", 
-                              required=True)
     privilege = fields.Selection(
                                  selection=[('1', 'USER'),
                                  ('2', 'ADMIN')], 
-                                 string="Privilegio del usuario", 
+                                 string="Privilegio del usuario",
+                                 default='1',
                                  required=True)
-    lastAccess = fields.Datetime(string="Ultimo acceso", default=fields.Datetime.now, required=True)
     lastPasswordChange = fields.Datetime(string="Ultimo cambio del contrasenia", default=fields.Datetime.now, required=True)
     tipoUsuario = fields.Selection(
-                                   selection=[('1','BIBLIOTECARIO'),
-                                   ('2','PROFESOR'),
+                                   selection=[('1', 'BIBLIOTECARIO'),
+                                   ('2', 'PROFESOR'),
                                    ('3', 'ALUMNO')],
-                                   string="Tipo de usuario", 
+                                   string="Tipo de usuario",
+                                   default='3',
                                    required=True)
