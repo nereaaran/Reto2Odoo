@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <!-- TREE -->
+        <record model="ir.ui.view" id="view_grupo_tree" >
+            <field name="name">grupo.tree</field>
+            <field name="model">libros.grupo</field>
+             <field name="priority">1</field>
+            <field name="arch" type="xml">
+                    <field name="nombre" string="Nombre del grupo"/>
+                    <field name="descripcion" string="Descripcion"/>
+                    <field name="num_alumno" srting="Numero de alumnos"/>                           
+            </field> 
+        </record>
+    </data>
+</odoo>
