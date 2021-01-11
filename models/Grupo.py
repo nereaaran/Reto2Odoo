@@ -16,7 +16,8 @@ class Grupo(models.Model):
     
     #Relacion N:1 con profesor
     profesor_id = fields.Many2one('res.user', ondelete='cascade',
-                                  string="Profesor", required=True)
+                                  string="Profesor",
+                                  domain=[('profesor','=',True)])
     #Relacion N:1 con GrupoLibro
     grupo_libro_id = fields.One2many('libros.grupo_libro', 'grupo_id', 
                                      string="IdGrupo")

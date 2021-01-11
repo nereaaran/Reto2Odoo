@@ -4,12 +4,43 @@
         <record model="ir.ui.view" id="view_grupo_tree" >
             <field name="name">grupo.tree</field>
             <field name="model">libros.grupo</field>
-             <field name="priority">1</field>
             <field name="arch" type="xml">
+                <tree string="List de Grupos">
                     <field name="nombre" string="Nombre del grupo"/>
                     <field name="descripcion" string="Descripcion"/>
-                    <field name="num_alumno" srting="Numero de alumnos"/>                           
+                    <field name="num_alumno" srting="Numero de alumnos"/>
+                </tree>                               
             </field> 
+        </record>
+        
+        <!-- FORM -->  
+        <record model="ir.ui.view" id="view_grupo_form">
+            <field name="name">grupo</field>
+            <field name="model">libros.grupo</field>
+            <field name="arch" type="xml">
+                <form string="Crear nuevo grupo">
+                    <sheet>
+                        <separator string="Datos del grupo" colspan="2"/>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="descripcion"/>
+                            <field name="num_alumno"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- SEARCH --> 
+        <record model="ir.ui.view" id="view_grupo_search">
+            <field name="name">grupo.search</field>
+            <field name="model">libros.grupo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre"/>
+                    <field name="num_alumno"/>
+                </search>
+            </field>
         </record>
     </data>
 </odoo>
