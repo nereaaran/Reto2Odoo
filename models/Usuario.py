@@ -10,11 +10,6 @@ from odoo import models
 class Usuario(models.Model):
     _inherit = 'res.users'
     
-    status = fields.Selection(
-                              selection=[('enabled', 'ENABLED'),
-                              ('disabled', 'DISABLED')], 
-                              string="Estado del usuario", 
-                              required=True)
     privilege = fields.Selection(
                                  selection=[('1', 'USER'),
                                  ('2', 'ADMIN')], 
