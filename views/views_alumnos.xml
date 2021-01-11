@@ -12,7 +12,7 @@
                     <field name="dni"/>
                     <field name="fechaNacimiento"/>
                     <field name="active"/>
-                    <field name="tipoUsuario"/>
+                    <field name="tipoUsuario" domain="[('tipoUsuario', '=', 'ALUMNO')]"/>
                 </field>
             </field>
         </record>
@@ -36,6 +36,7 @@
                             <field name="login"/>
                             <field name="password"/>
                             <field name="active"/>
+                            <field name="tipoUsuario"/>
                         </group>
                     </sheet>
                 </form>
