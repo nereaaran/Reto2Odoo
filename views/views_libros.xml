@@ -1,0 +1,64 @@
+<!--author Nerea Aranguren-->
+
+<odoo>
+    <data>
+        <!--Books Tree View-->
+        <record model="ir.ui.view" id="libros_tree_view">
+            <field name="name">libros.tree</field>
+            <field name="model">libros.libro</field>
+            <field name="arch" type="xml">
+                <tree string="Libro Tree">
+                <field name="titulo" string="Titulo"/>
+                <field name="autor" string="Autor"/>
+                <field name="editorial" string="Editorial"/>
+                <field name="isbn" string="ISBN"/>
+                <field name="genero" string="Genero"/>
+                <field name="cantidadTotal" string="Cantidad Total"/>
+                <field name="cantidadDisponible" string="Cantidad Disponible"/>
+                <field name="descargable" string="Descargable"/>
+                <field name="linkDescarga" string="Link de Descarga"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!--Form-->
+        <record model="ir.ui.view" id="libros_form_view">
+            <field name="name">libros.form</field>
+            <field name="model">libros.libro</field>
+            <field name="arch" type="xml">
+                <form string="Crear alumno">
+                    <sheet>
+                        <separator string="Datos del libro" colspan="2"/>
+                        <group>
+                            <field name="titulo"/>
+                            <field name="autor"/>
+                            <field name="editorial"/>
+                            <field name="isbn"/>
+                            <field name="genero"/>
+                        </group>
+                        <group>
+                        <separator string="Otros datos" colspan="2"/>
+                            <field name="cantidadTotal"/>
+                            <field name="cantidadDisponible"/>
+                            <field name="descargable"/>
+                            <field name="linkDescarga"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!--Search-->
+        <record model="ir.ui.view" id="libros_search_view">
+            <field name="name">libros.search</field>
+            <field name="model">libros.libro</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="titulo"/>
+                    <field name="autor"/>
+                    <field name="editorial"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
