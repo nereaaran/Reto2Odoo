@@ -15,6 +15,13 @@
             <field name="view_mode">tree,form</field>
         </record>
     
+        <record model="ir.actions.act_window" id="alumnos">
+            <field name="name">Alumnos</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_tipoUsuario': 1}</field>
+        </record>
+        
         <record model="ir.actions.act_window" id="usuarios">
             <field name="name">Usuarios</field>
             <field name="res_model">res.users</field>
@@ -29,8 +36,8 @@
         <menuitem name="Libros" id="menu_libros" parent="main_menu"/>
         <menuitem name="Gestionar libros" id="menu_gestionar_libros" parent="menu_libros" action="libros"/>
     
-        <menuitem name="Grupos y usuarios" id="menu_grupos_y_usuarios" parent="main_menu"/>
-        <menuitem name="Gestionar grupos" id="menu_gestionar_grupos" parent="menu_grupos_y_usuarios" action="grupos"/>
-        <menuitem name="Gestionar usuarios" id="menu_gestionar_usuarios" parent="menu_grupos_y_usuarios" action="usuarios"/>
+        <menuitem name="Grupos y alumnos" id="menu_grupos_y_alumnos" parent="main_menu"/>
+        <menuitem name="Gestionar grupos" id="menu_gestionar_grupos" parent="menu_grupos_y_alumnos" action="grupos"/>
+        <menuitem name="Gestionar alumnos" id="menu_gestionar_alumnos" parent="menu_grupos_y_alumnos" action="alumnos"/>
     </data>
 </odoo>
