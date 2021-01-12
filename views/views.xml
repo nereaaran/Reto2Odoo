@@ -19,6 +19,7 @@
             <field name="name">Alumnos</field>
             <field name="res_model">res.users</field>
             <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_tipoUsuario': 1}</field>
         </record>
         
         <record model="ir.actions.act_window" id="usuarios">
