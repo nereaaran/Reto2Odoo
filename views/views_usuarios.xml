@@ -1,0 +1,60 @@
+<!--author Cristina Milea-->
+
+<odoo>
+    <data>
+        <!--Tree-->
+        <record model="ir.ui.view" id="usuarios_tree_view">
+            <field name="name">usuarios.tree</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="arch" type="xml">
+                <field name="login" position="after">
+                    <field name="dni"/>
+                    <field name="fechaNacimiento"/>
+                    <field name="active"/>
+                    <field name="tipoUsuario"/>
+                </field>
+            </field>
+        </record>
+        
+        <!--Form-->
+        <record model="ir.ui.view" id="usuarios_form_view">
+            <field name="name">usuarios.form</field>
+            <field name="model">res.users</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <separator string="Datos personales" colspan="2"/>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="dni"/>
+                            <field name="fechaNacimiento"/>
+                        </group>
+                        <separator string="Datos del usuario" colspan="2"/>
+                        <group>
+                            <field name="login"/>
+                            <field name="password"/>
+                            <field name="tipoUsuario"/>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!--Search-->
+        <record model="ir.ui.view" id="usuarios_search_view">
+            <field name="name">usuarios.search</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="login"/>
+                    <field name="dni"/>
+                    <filter string="Alumno" name="tipoUsuario" domain="[('tipoUsuario', '=', 3)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
