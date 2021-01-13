@@ -22,5 +22,4 @@ class Usuario(models.Model):
                                    ('2', 'PROFESOR'),
                                    ('3', 'ALUMNO')],
                                    string="Tipo de usuario",
-                                   default='3',
                                    required=True)
