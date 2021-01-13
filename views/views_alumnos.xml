@@ -3,7 +3,7 @@
 <odoo>
     <data>
         <!--Tree-->
-        <record model="ir.ui.view" id="alumnos_tree_view">
+        <record model="ir.ui.view" id="usuarios_tree_view">
             <field name="name">alumnos.tree</field>
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_tree"/>
@@ -18,7 +18,7 @@
         </record>
         
         <!--Form-->
-        <record model="ir.ui.view" id="alumnos_form_view">
+        <record model="ir.ui.view" id="usuarios_form_view">
             <field name="name">alumnos.form</field>
             <field name="model">res.users</field>
             <field name="priority" eval="1"/>
@@ -44,7 +44,7 @@
         </record>
         
         <!--Search-->
-        <record model="ir.ui.view" id="alumnos_search_view">
+        <record model="ir.ui.view" id="usuarios_search_view">
             <field name="name">alumnos.search</field>
             <field name="model">res.users</field>
             <field name="arch" type="xml">
@@ -52,7 +52,7 @@
                     <field name="name"/>
                     <field name="login"/>
                     <field name="dni"/>
-                    <filter string="Alumno" name="tipoUsuario" domain="[('tipoUsuario', '=', 3)]"/>
+                    <filter string="Alumnos" name="tipoUsuario" domain="[('tipoUsuario', '=', 3)]"/>
                 </search>
             </field>
         </record>
