@@ -10,8 +10,8 @@ from odoo import models
 class Alumno(models.Model):
     _inherit = 'res.users'
     
-    dni = fields.Char(string="DNI")
-    fechaNacimiento = fields.Date(string="Fecha de nacimiento")
+    dni = fields.Char(string="DNI", required=True, size=9)
+    fechaNacimiento = fields.Date(string="Fecha de nacimiento", required=True, domain=[('fechaNacimiento', '<', fields.Date.today())])
     
     #Relacion N:M con grupo.
     grupo_id = fields.Many2many('libros.grupo', string="Grupo")
