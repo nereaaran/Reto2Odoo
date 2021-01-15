@@ -6,9 +6,12 @@
 
 from odoo import fields
 from odoo import models
+from odoo import api
+
 
 class Grupo(models.Model):
     _name = 'libros.grupo'
+    
     
     descripcion = fields.Text()
     nombre = fields.Char(string="Nombre", required=True)
@@ -23,3 +26,6 @@ class Grupo(models.Model):
                                      string="IdGrupo")
     #Relacion M:N con alumno
     alumno_id = fields.Many2many('res.user', string="Alumno")
+    
+    
+    

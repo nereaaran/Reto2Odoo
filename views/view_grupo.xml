@@ -24,7 +24,7 @@
                         <group>
                             <field name="nombre"/>
                             <field name="descripcion"/>
-                            <field name="num_alumno"/>
+                            
                         </group>
                     </sheet>
                 </form>
