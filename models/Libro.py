@@ -18,7 +18,7 @@ class Libro(models.Model):
     # La editorial del libro.
     editorial = fields.Char(string="Editorial", required=True)
     # El isbn del libro.
-    isbn = fields.Integer(string="ISBN", required=True)
+    isbn = fields.Float(string="ISBN", size=13, digits=(13, 0), required=True)
     # El genero literario del libro.
     genero = fields.Char(string="Genero literario", required=True)
     # La cantidad total que hay del libro.
