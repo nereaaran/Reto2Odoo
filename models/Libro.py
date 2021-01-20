@@ -6,6 +6,8 @@
 
 from odoo import fields
 from odoo import models
+from odoo import api
+from odoo import exceptions
 
 class Libro(models.Model):
     # Nombre del modulo en Odoo
@@ -36,3 +38,24 @@ class Libro(models.Model):
     alumno_id = fields.One2many('libros.alumno_libro', 'libro_id', string="Alumno")
     # Referencia a la relacion 1:N con la tabla relacional grupo libro.
     grupo_id = fields.One2many('libros.grupo_libro', 'libro_id', string = "Grupo")
+    
+    @api.onchange('isbn')
+    def _check_isbn(self):
+        if self.isbn > 9999999999999:
+            return {
+                'warning': {
+                    'title': "Incorrect isbn value",'message': 
+                    "The isbn cant be negative over 13 digits",
+                    },
+            }
+            
+    
+    @api.onchange('cantidadTotal')
+    def _check_cantidad_total(self):
+        if self.cantidadTotal < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect cantidadTotal value",'message': 
+                    "The cantidadTotal cant be negative",
+                    },
+            }
