@@ -8,15 +8,15 @@
             <field name="model">libros.libro</field>
             <field name="arch" type="xml">
                 <tree string="Libro Tree">
-                <field name="titulo" string="Titulo"/>
-                <field name="autor" string="Autor"/>
-                <field name="editorial" string="Editorial"/>
-                <field name="isbn" string="ISBN"/>
-                <field name="genero" string="Genero"/>
-                <field name="cantidadTotal" string="Cantidad Total"/>
-                <field name="cantidadDisponible" string="Cantidad Disponible"/>
-                <field name="descargable" string="Descargable"/>
-                <field name="linkDescarga" string="Link de Descarga"/>
+                    <field name="titulo" string="Titulo"/>
+                    <field name="autor" string="Autor"/>
+                    <field name="editorial" string="Editorial"/>
+                    <field name="isbn" string="ISBN"/>
+                    <field name="genero" string="Genero"/>
+                    <field name="cantidadTotal" string="Cantidad Total"/>
+                    <field name="cantidadDisponible" string="Cantidad Disponible"/>
+                    <field name="descargable" string="Descargable"/>
+                    <field name="linkDescarga" string="Link de Descarga"/>
                 </tree>
             </field>
         </record>
@@ -26,7 +26,7 @@
             <field name="name">libros.form</field>
             <field name="model">libros.libro</field>
             <field name="arch" type="xml">
-                <form string="Crear alumno">
+                <form string="Crear nuevo libro">
                     <sheet>
                         <separator string="Datos del libro" colspan="2"/>
                         <group>
@@ -36,8 +36,8 @@
                             <field name="isbn"/>
                             <field name="genero"/>
                         </group>
-                        <group>
                         <separator string="Otros datos" colspan="2"/>
+                        <group>
                             <field name="cantidadTotal"/>
                             <field name="cantidadDisponible"/>
                             <field name="descargable"/>
