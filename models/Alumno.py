@@ -4,6 +4,8 @@
 
 # author Cristina Milea
 
+from datetime import datetime
+from odoo import api
 from odoo import fields
 from odoo import models
 
@@ -17,3 +19,9 @@ class Alumno(models.Model):
     grupo_id = fields.Many2many('libros.grupo', string="Grupo")
     #Relacion 1:N con alumno_libro
     libro_id = fields.One2many('libros.alumno_libro', 'alumno_id', string="Libro")
+    
+    #@api.constrains('fechaNacimiento')
+    #def _fecha_nacimiento_anterior_a_hoy(self):
+    #    fechaDeNacimiento=datetime.datetime.strptime(self.fechaNacimiento, "%Y-%m-%d")
+    #    if fechaDeNacimiento >= datetime.today():
+    #        raise exceptions.ValidationError("La fecha de nacimiento tiene que ser anterior a la fecha actual")
