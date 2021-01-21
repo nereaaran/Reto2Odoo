@@ -6,6 +6,8 @@
 
 from odoo import fields
 from odoo import models
+from odoo import api
+from odoo import exceptions
 
 class Alumno(models.Model):
     _inherit = 'res.users'
@@ -17,3 +19,14 @@ class Alumno(models.Model):
     grupo_id = fields.Many2many('libros.grupo', string="Grupo")
     #Relacion 1:N con alumno_libro
     libro_id = fields.One2many('libros.alumno_libro', 'alumno_id', string="Libro")
+    
+    # Que la fecha de nacimiento sea menor a la de hoy
+    @api.constrains('fechaNacimiento')
+    def _check_fecha_nacimiento(self):
+        date_today = fields.Date.today()
+        for r in self:
+            if r.fechaNacimiento >= date_today:
+                 raise exceptions.ValidationError("Fechaaa de nacimiento must be before today")
+
+    
+    
