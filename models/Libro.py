@@ -8,6 +8,7 @@ from odoo import fields
 from odoo import models
 from odoo import api
 from odoo import exceptions
+from odoo import re
 
 class Libro(models.Model):
     # Nombre del modulo en Odoo
@@ -37,25 +38,56 @@ class Libro(models.Model):
     # Referencia a la relacion 1:N con la tabla relacional alumno libro.
     alumno_id = fields.One2many('libros.alumno_libro', 'libro_id', string="Alumno")
     # Referencia a la relacion 1:N con la tabla relacional grupo libro.
-    grupo_id = fields.One2many('libros.grupo_libro', 'libro_id', string = "Grupo")
+    grupo_id = fields.One2many('libros.grupo_libro', 'libro_id', string="Grupo")
     
+    
+    # Avisa al usuario de que el isbn supera el valor permitido.
     @api.onchange('isbn')
-    def _check_isbn(self):
-        if self.isbn > 9999999999999:
+    def _verify_isbn(self):
+        if self.isbn > 9999999999999.0:
             return {
                 'warning': {
-                    'title': "Incorrect isbn value",'message': 
-                    "The isbn cant be negative over 13 digits",
-                    },
+                    'title': "Incorrect isbn value",
+                    'message': "The isbn cant be negative over 13 digits",
+                },
             }
             
-    
-    @api.onchange('cantidadTotal')
-    def _check_cantidad_total(self):
+    # Avisa al usuario de que la cantidad total y la cantidad disponible no 
+    # pueden ser negativas.
+    @api.onchange('cantidadTotal', 'cantidadDisponible')
+    def _verify_cantidades(self):
         if self.cantidadTotal < 0:
             return {
                 'warning': {
-                    'title': "Incorrect cantidadTotal value",'message': 
-                    "The cantidadTotal cant be negative",
-                    },
+                    'title': "Incorrect Cantidad Total value",
+                    'message': "Cantidad Total cant be negative",
+                },
             }
+        if self.cantidadDisponible < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect Cantidad Disponible value",
+                    'message': "Cantidad Disponible cant be negative",
+                },
+            }
+            
+    # Restringe salvar los datos si la cantidad disponible es mayor a la 
+    # cantidad total.
+    @api.constrains('cantidadTotal', 'cantidadDisponible')
+    def _check_valid_cantidades(self):
+        for r in self:
+            if r.cantidadTotal < r.cantidadDisponible:
+                raise exceptions.ValidationError("Cantidad Disponible cant be bigger than Cantidad Total")
+          
+            
+    @api.constrains('autor')
+    def _check_valid_autor(self):
+        pattern = "^[\-'a-zA-Z ]+$"
+        for r in self:
+            if re.match(pattern, r.autor):
+                raise exceptions.ValidationError("Autor can only have letters")
+            
+    
+            
+            
+          
