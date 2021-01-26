@@ -28,7 +28,9 @@
         'views/templates.xml',
         'views/view_grupo.xml',
         'views/views_alumnos.xml',
-        'views/views_libros.xml'
+        'views/views_libros.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv'
     ],
     # only loaded in demonstration mode
     'demo': [
