@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base' , 'report'],
 
     # always loaded
     'data': [
@@ -28,7 +28,8 @@
         'views/templates.xml',
         'views/view_grupo.xml',
         'views/views_alumnos.xml',
-        'views/views_libros.xml'
+        'views/views_libros.xml',
+        'report/libro_report.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
