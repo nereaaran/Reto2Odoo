@@ -4,6 +4,8 @@
 
 # author Cristina Milea
 
+from datetime import datetime
+from odoo import api
 from odoo import fields
 from odoo import models
 from odoo import api

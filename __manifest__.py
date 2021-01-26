@@ -29,6 +29,8 @@
         'views/view_grupo.xml',
         'views/views_alumnos.xml',
         'views/views_libros.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
         'report/libro_report.xml'
     ],
     # only loaded in demonstration mode
