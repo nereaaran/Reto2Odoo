@@ -27,11 +27,10 @@
                                             <th>Cantidad Total</th>
                                             <th>Cantidad Disponible</th>
                                             <th>Descargable</th>
-                                            <th>Link Descarga</th>
+                                            <th>Link</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <t t-set="libro_ids_sorted" t-value="l.task_ids.sorted(key=lambda r:(r.stage_id.id))"/>
                                         <t t-foreach="docs" t-as="t">
                                             <tr>
                                                 <td>
