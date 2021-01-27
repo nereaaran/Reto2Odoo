@@ -4,7 +4,6 @@
 
 # author Cristina Milea
 
-from datetime import datetime
 from odoo import api
 from odoo import fields
 from odoo import models
@@ -28,7 +27,7 @@ class Alumno(models.Model):
         date_today = fields.Date.today()
         for r in self:
             if r.fechaNacimiento >= date_today:
-                 raise exceptions.ValidationError("Fechaaa de nacimiento must be before today")
+                 raise exceptions.ValidationError("Fecha de nacimiento must be before today")
 
     
     

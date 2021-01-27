@@ -1,3 +1,5 @@
+<!--author Nerea Aranguren y Jonathan Vinan-->
+
 <odoo>
     <template id="libro_report_template">
         <t t-call="report.html_container">

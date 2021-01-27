@@ -1,3 +1,5 @@
+<!--author Cristina Milea-->
+
 <odoo>
     <data>
         <record id="grupo_bibliotecario" model="res.groups">
