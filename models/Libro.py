@@ -6,6 +6,8 @@
 
 from odoo import fields
 from odoo import models
+from odoo import api
+from odoo import exceptions
 
 class Libro(models.Model):
     # Nombre del modulo en Odoo
@@ -35,4 +37,63 @@ class Libro(models.Model):
     # Referencia a la relacion 1:N con la tabla relacional alumno libro.
     alumno_id = fields.One2many('libros.alumno_libro', 'libro_id', string="Alumno")
     # Referencia a la relacion 1:N con la tabla relacional grupo libro.
-    grupo_id = fields.One2many('libros.grupo_libro', 'libro_id', string = "Grupo")
+    grupo_id = fields.One2many('libros.grupo_libro', 'libro_id', string="Grupo")
+    
+    
+    # Avisa al usuario de que el isbn supera o esta debajo del valor permitido.
+    @api.onchange('isbn')
+    def _verify_isbn(self):
+        if self.isbn > 9999999999999.0:
+            return {
+                'warning': {
+                    'title': "Incorrect isbn value",
+                    'message': "The isbn cant be over 13 digits",
+                },
+            }
+        elif self.isbn < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect isbn value",
+                    'message': "The isbn cant be negative",
+                },
+            }
+            
+    # Avisa al usuario de que la cantidad total no puede ser negativa.
+    @api.onchange('cantidadTotal')
+    def _verify_cantidad_total(self):
+        if self.cantidadTotal < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect Cantidad Total value",
+                    'message': "Cantidad Total cant be negative",
+                },
+            }
+            
+    # Avisa al usuario de que la cantidad disponible no puede ser negativa.
+    @api.onchange('cantidadDisponible')
+    def _verify_cantidad_disponible(self):
+        if self.cantidadDisponible < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect Cantidad Disponible value",
+                    'message': "Cantidad Disponible cant be negative",
+                },
+            }
+            
+    # Restringe salvar los datos si la cantidad disponible es mayor a la 
+    # cantidad total.
+    @api.constrains('cantidadTotal', 'cantidadDisponible')
+    def _check_valid_cantidades(self):
+        for r in self:
+            if r.cantidadTotal < r.cantidadDisponible:
+                raise exceptions.ValidationError("Cantidad Disponible cant be bigger than Cantidad Total")
+          
+    # Restringe salvar los datos si el isbn supera el valor permitido.
+    @api.onchange('isbn')
+    def _check_isbn(self):
+        for r in self:
+            if r.isbn > 9999999999999.0:
+                raise exceptions.ValidationError("The isbn cant be negative over 13 digits")
+            elif r.isbn < 0.0:
+                raise exceptions.ValidationError("The isbn cant be negative")
+             

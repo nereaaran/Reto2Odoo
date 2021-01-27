@@ -1,2 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_libros_libros,libros.libros,model_libros_libros,,1,0,0,0
+access_libros_bibliotecario,Gestion de libros para bibliotecarios,model_libros_libro,grupo_bibliotecario,1,1,1,1
+access_libros_profesor,Gestion de libros para profesores,model_libros_libro,grupo_profesor,1,0,0,0
+
+access_grupos_bibliotecario,Gestion de grupos para bibliotecarios,model_libros_grupo,grupo_bibliotecario,0,0,0,0
+access_grupos_profesor,Gestion de grupos para profesor,model_libros_grupo,grupo_profesor,1,1,1,1
+
+access_alumnos_bibliotecario,Gestion de alumnos para bibliotecarios,base.model_res_users,grupo_bibliotecario,0,0,0,0
+access_alumnos_profesor,Gestion de alumnos para profesor,base.model_res_users,grupo_profesor,1,0,0,0
