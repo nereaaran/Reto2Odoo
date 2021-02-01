@@ -43,6 +43,15 @@
                             <field name="descargable"/>
                             <field name="linkDescarga"/>
                         </group>
+                        <notebook>
+                            <page string="Prestamos">
+                                <field name="alumno_ids">
+                                    <tree string="Fecha Limite">
+                                        <field name="fecha_limite"/>
+                                    </tree>
+                                </field>    
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
