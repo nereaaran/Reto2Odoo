@@ -7,7 +7,7 @@
 from odoo import fields
 from odoo import models
 
-class Alimnolibro(models.Model):
+class Alumnolibro(models.Model):
     # Nombre del modulo en Odoo
     _name = 'libros.alumno_libro'
     
@@ -17,6 +17,6 @@ class Alimnolibro(models.Model):
     fecha_limite = fields.Date(string="Fecha Limite")
 
     # Variable relacionada con la tabla alumno.
-    alumno_id = fields.Many2one('libros.alumno', required=True, ondelete='cascade')
+    alumno_id = fields.Many2one('res.users', required=True, ondelete='cascade')
     # Variable relacionada con la tabla libro.
     libro_id = fields.Many2one('libros.libro', required=True, ondelete='cascade')
