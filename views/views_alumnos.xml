@@ -35,7 +35,7 @@
                         <group>
                             <field name="login"/>
                             <field name="password"/>
-                            <field name="tipoUsuario"/>
+                            <field name="tipoUsuario" readonly='1'/>
                             <field name="active"/>
                         </group>
                     </sheet>

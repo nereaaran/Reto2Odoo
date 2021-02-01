@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from . import alumno
-from . import alumnolibro
-from . import bibliotecario
-from . import grupo
-from . import grupolibro
-from . import libro
-from . import profesor
-from . import usuario
+from . import Alumno
+from . import AlumnoLibro
+from . import Bibliotecario
+from . import Grupo
+from . import GrupoLibro
+from . import Libro
+from . import Profesor
+from . import Usuario
