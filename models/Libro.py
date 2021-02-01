@@ -96,4 +96,4 @@ class Libro(models.Model):
                 raise exceptions.ValidationError("The isbn cant be negative over 13 digits")
             elif r.isbn < 0.0:
                 raise exceptions.ValidationError("The isbn cant be negative")
-             
+  
